@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [project.scripts]
-authorcup-train = "authorcup_25.train:main"
+authorcup-train = "mathorcup_25.train:main"
 
 
 [tool.poetry]
