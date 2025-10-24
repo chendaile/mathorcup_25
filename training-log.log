@@ -1,9 +1,0 @@
-2025-10-25 00:07:44,301 - INFO - Training YOLO model with the following parameters:
-2025-10-25 00:07:44,301 - INFO -   Model:   yolo11m.pt
-2025-10-25 00:07:44,302 - INFO -   Data:    data-bin/yaml-data/data.yaml
-2025-10-25 00:07:44,302 - INFO -   Batch:   0.9
-2025-10-25 00:07:44,302 - INFO -   Cache:   True
-2025-10-25 00:07:44,302 - INFO -   Time:    0.1
-2025-10-25 00:07:44,302 - INFO -   Name:    20251025_hour00_min07
-2025-10-25 00:07:44,302 - INFO -   Project: yolo11m
-2025-10-25 00:07:44,302 - INFO -   Resume:  False
