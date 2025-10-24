@@ -17,7 +17,7 @@ authorcup-train = "mathorcup_25.train:main"
 
 [tool.poetry]
 packages = [
-    {include = "authorcup_25", from = "src"}
+    {include = "mathorcup_25", from = "src"}
 ]
 
 [build-system]

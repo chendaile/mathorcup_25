@@ -1,0 +1,7 @@
+path: data-bin/yaml-data
+train: train/images
+val: validation/images
+
+nc: 3
+
+names: ["Dent", "Hole", "Rusty"]
