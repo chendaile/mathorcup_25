@@ -8,11 +8,13 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "ultralytics (>=8.3.221,<9.0.0)"
+    "ultralytics (>=8.3.221,<9.0.0)",
+    "tensorboard (>=2.20.0,<3.0.0)",
+    "clearml (>=2.0.2,<3.0.0)"
 ]
 
 [project.scripts]
-authorcup-train = "mathorcup_25.train:main"
+mathorcup-train = "mathorcup_25.train:main"
 
 
 [tool.poetry]

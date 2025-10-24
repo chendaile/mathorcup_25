@@ -86,7 +86,6 @@ def main():
         time=args.time,
         name=args.name,
         resume=args.resume,
-        profile=True,
         exist_ok=True,
         project=f"output-bin/{args.project}",
     )
