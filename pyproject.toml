@@ -1,7 +1,7 @@
 [project]
 name = "mathorcup-25"
 version = "0.1.0"
-description = ""
+description = "YOLO training utilities for MathOrCup 2025"
 authors = [
     {name = "chendaile",email = "3185854290@qq.com"}
 ]
@@ -11,6 +11,14 @@ dependencies = [
     "ultralytics (>=8.3.221,<9.0.0)"
 ]
 
+[project.scripts]
+authorcup-train = "authorcup_25.train:main"
+
+
+[tool.poetry]
+packages = [
+    {include = "authorcup_25", from = "src"}
+]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
