@@ -3,3 +3,5 @@ Question
 *.pt
 output-bin
 *.log
+realesrgan-ncnn-vulkan-20220424-windows
+nul

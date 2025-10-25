@@ -1,7 +1,5 @@
 """Authorcup 25 - YOLO training package."""
 
-from .train import main, parse_args
-
-__version__ = "0.1.0"
+from .train_yolo import main, parse_args
 
 __all__ = ["main", "parse_args"]

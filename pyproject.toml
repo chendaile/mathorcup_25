@@ -1,6 +1,6 @@
 [project]
 name = "mathorcup-25"
-version = "0.1.0"
+version = "0.2.0"
 description = "YOLO training utilities for MathOrCup 2025"
 authors = [
     {name = "chendaile",email = "3185854290@qq.com"}
@@ -9,12 +9,12 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "ultralytics (>=8.3.221,<9.0.0)",
-    "tensorboard (>=2.20.0,<3.0.0)",
-    "clearml (>=2.0.2,<3.0.0)"
+    "clearml (>=2.0.2,<3.0.0)",
 ]
 
 [project.scripts]
-mathorcup-train = "mathorcup_25.train:main"
+mathorcup-train-yolo = "mathorcup_25.train_yolo:main"
+show-diff = "mathorcup_25.showdiff_GenerativeAdversarial_models:main"
 
 
 [tool.poetry]
