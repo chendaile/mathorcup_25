@@ -15,6 +15,7 @@ dependencies = [
 [project.scripts]
 mathorcup-train-yolo = "mathorcup_25.train_yolo:main"
 show-diff = "mathorcup_25.showdiff_GenerativeAdversarial_models:main"
+train-split = "train_split:main"
 
 
 [tool.poetry]

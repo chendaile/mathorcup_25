@@ -30,6 +30,13 @@ def parse_args():
         "--batch", type=float, default=0.9, help="Batch size percentage for training."
     )
     parser.add_argument(
+        "--imgsz",
+        "--img",
+        type=int,
+        default=640,
+        help="Image size for training (e.g., 640, 1280).",
+    )
+    parser.add_argument(
         "--cache",
         type=bool,
         default=True,
@@ -63,27 +70,64 @@ def parse_args():
         default=False,
         help="Whether continue to train from un_finished model",
     )
+    parser.add_argument(
+        "--task",
+        type=str,
+        default="detect",
+        choices=["detect", "obb", "segment", "classify", "pose"],
+        help="Task type: detect, obb, segment, classify, or pose.",
+    )
+    parser.add_argument(
+        "--epochs",
+        type=int,
+        default=100,
+        help="Number of training epochs.",
+    )
+    parser.add_argument(
+        "--patience",
+        type=int,
+        default=50,
+        help="Epochs to wait for no observable improvement for early stopping.",
+    )
+    parser.add_argument(
+        "--device",
+        type=str,
+        default="0",
+        help="Device to run on, e.g., 0 or 0,1,2,3 or cpu",
+    )
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
     logging.info("Training YOLO model with the following parameters:")
-    logging.info(f"  Model:   {args.model}")
-    logging.info(f"  Data:    {args.data}")
-    logging.info(f"  Batch:   {args.batch}")
-    logging.info(f"  Cache:   {args.cache}")
-    logging.info(f"  Time:    {args.time}")
-    logging.info(f"  Name:    {args.name}")
-    logging.info(f"  Project: {args.project}")
-    logging.info(f"  Resume:  {args.resume}")
+    logging.info(f"  Model:    {args.model}")
+    logging.info(f"  Data:     {args.data}")
+    logging.info(f"  Task:     {args.task}")
+    logging.info(f"  Batch:    {args.batch}")
+    logging.info(f"  Imgsz:    {args.imgsz}")
+    logging.info(f"  Cache:    {args.cache}")
+    logging.info(f"  Time:     {args.time}")
+    logging.info(f"  Epochs:   {args.epochs}")
+    logging.info(f"  Patience: {args.patience}")
+    logging.info(f"  Device:   {args.device}")
+    logging.info(f"  Name:     {args.name}")
+    logging.info(f"  Project:  {args.project}")
+    logging.info(f"  Resume:   {args.resume}")
 
-    model = YOLO(model=args.model, verbose=False)
+    # 加载模型
+    model = YOLO(model=args.model, task=args.task, verbose=False)
+    
+    # 训练模型
     model.train(
         data=args.data,
         batch=args.batch,
+        imgsz=args.imgsz,
         cache=args.cache,
         time=args.time,
+        epochs=args.epochs,
+        patience=args.patience,
+        device=args.device,
         name=args.name,
         resume=args.resume,
         exist_ok=True,
