@@ -7,3 +7,7 @@ realesrgan-ncnn-vulkan-20220424-windows
 nul
 tmp
 labeled-output
+labeled-output.zip
+tmp*
+SeaFront_v1_0_0
+.claude
